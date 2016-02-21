@@ -786,6 +786,7 @@ typedef enum {
 	lldpctl_k_custom_tlvs = 5000,		/**< `(AL)` custom TLVs */
 	lldpctl_k_custom_tlvs_clear,		/** `(I,WO)` clear list of custom TLVs */
 	lldpctl_k_custom_tlv,			/** `(AL,WO)` custom TLV **/
+	lldpctl_k_custom_tlv_op,		/**< `(I,WO)` custom TLV operation */
 	lldpctl_k_custom_tlv_oui,		/**< `(I,WO)` custom TLV Organizationally Unique Identifier. Default is 0 (3 bytes) */
 	lldpctl_k_custom_tlv_oui_subtype,	/**< `(I,WO)` custom TLV subtype. Default is 0 (1 byte) */
 	lldpctl_k_custom_tlv_oui_info_string,	/**< `(I,WO)` custom TLV Organizationally Unique Identifier Information String (up to 507 bytes) */
