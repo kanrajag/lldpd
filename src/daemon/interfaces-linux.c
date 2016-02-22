@@ -728,6 +728,12 @@ iflinux_add_physical(struct lldpd *cfg,
 			continue;
 		}
 
+		/* If the interface has qdisc noqueue - then assume its virtual, skip it. */
+		if (iface->qdisc && !strcmp(iface->qdisc, "noqueue")) {
+			log_debug("interfaces", "skip %s: qdisc is noqueue", iface->name);
+			continue;
+		}
+
 		/* Get the real MAC address (for example, if the interface is enslaved) */
 		iflinux_get_permanent_mac(cfg, interfaces, iface);
 

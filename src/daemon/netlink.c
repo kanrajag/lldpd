@@ -241,6 +241,9 @@ netlink_parse_link(struct nlmsghdr *msg,
 		case IFLA_LINKINFO:
 			netlink_parse_linkinfo(iff, RTA_DATA(attribute), RTA_PAYLOAD(attribute));
 			break;
+		case IFLA_QDISC:
+			iff->qdisc = strdup(RTA_DATA(attribute));
+			break;
 		default:
 			log_debug("netlink", "unhandled link attribute type %d for iface %s",
 			    attribute->rta_type, iff->name ? iff->name : "(unknown)");

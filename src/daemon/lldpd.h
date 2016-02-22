@@ -316,6 +316,7 @@ struct interfaces_device {
 	int   vlanid;		/* If a VLAN, what is the VLAN ID? */
 	struct interfaces_device *lower; /* Lower interface (for a VLAN for example) */
 	struct interfaces_device *upper; /* Upper interface (for a bridge or a bond) */
+	char *qdisc;		/* Qdisc name */
 
 	/* The following are OS specific. Should be static (no free function) */
 #ifdef HOST_OS_LINUX
